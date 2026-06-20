@@ -82,7 +82,7 @@ nav{
 .nav-pill:hover{background:var(--blue);transform:scale(1.03)}
 .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px}
 .ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:1px}
-.mob-nav{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:var(--bg);padding:24px 40px;border-bottom:1px solid var(--border)}
+.mob-nav{display:none;position:fixed;top:100px;left:0;right:0;z-index:99;background:var(--bg);padding:24px 40px;border-bottom:1px solid var(--border)}
 .mob-nav.open{display:block}
 .mob-nav a{display:block;font-size:16px;padding:12px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border)}
 
@@ -421,18 +421,113 @@ footer p{font-size:12px;color:var(--silver)}
   opacity: 1;
 }
 
+/* ── TABLET ── */
 @media(max-width:900px){
-  #hero,#about,#edu{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .bento .span4,.bento .span6,.bento .span3{grid-column:span 12}
-  .bento .span8{grid-column:span 12}
-  nav .nav-r .nav-pill,.nav-r>a{display:none}
+  /* nav */
+  nav{padding:0 20px}
+  nav .nav-r .nav-pill,nav .nav-r>a:not(.nav-pill){display:none}
   .ham{display:flex}
-  .about-big-num{font-size:80px}
-  .wins-header{flex-direction:column;align-items:flex-start;gap:12px}
-  .collage-wrap{gap:3px}
-  .col-item{width:56px;height:56px}
+  /* hero */
+  #hero{grid-template-columns:1fr;padding:100px 20px 60px;min-height:auto;margin-top:88px}
+  .hero-right{display:none}
+  .hero-h1{font-size:clamp(42px,10vw,72px)}
+  .hero-stats{gap:20px}
+  .stat-n{font-size:28px}
+  /* about */
+  #about{grid-template-columns:1fr;padding:64px 20px;gap:36px}
+  .about-big-num{font-size:72px}
+  /* work */
+  #work{padding:0 20px 64px}
+  .bento{grid-template-columns:1fr}
+  .bento .span4,.bento .span6,.bento .span3,.bento .span8,.bento .span12{grid-column:span 1}
+  /* wins */
+  .wins-header{padding:0 20px;flex-direction:column;align-items:flex-start;gap:8px}
+  .wins-scroll{padding:8px 20px 20px}
   .wins-count{font-size:48px}
+  /* global */
+  #global{padding:64px 20px}
+  /* edu */
+  #edu{grid-template-columns:1fr;padding:64px 20px;gap:36px}
+  /* contact */
+  #contact{padding:64px 20px}
+  .contact-grid{grid-template-columns:1fr!important;gap:40px}
+  /* collage */
+  .collage-wrap{gap:3px}
+  .col-item{width:60px;height:60px}
+  /* footer */
+  footer{padding:20px;flex-direction:column;text-align:center;gap:8px}
+}
+
+/* ── MOBILE ── */
+@media(max-width:480px){
+  :root{--section-gap:56px}
+  /* nav */
+  nav{height:56px;padding:0 16px}
+  .nav-logo,.nav-name{font-size:16px}
+  /* marquee */
+  .marquee-wrap{padding:10px 0}
+  .marquee-item{font-size:11px;padding:0 20px}
+  /* hero */
+  #hero{padding:90px 16px 48px;margin-top:100px}
+  .hero-tag{font-size:11px;padding:5px 12px;margin-bottom:20px}
+  .hero-h1{font-size:clamp(36px,11vw,56px);margin-bottom:16px}
+  .hero-desc{font-size:14px;margin-bottom:28px}
+  .hero-stats{gap:16px;padding:20px 0;flex-wrap:wrap}
+  .stat-n{font-size:26px}
+  .stat-l{font-size:10px}
+  .hbtn-main,.hbtn-sec{padding:11px 20px;font-size:12px}
+  /* about */
+  #about{padding:48px 16px;gap:28px}
+  .about-big-num{font-size:56px}
+  .about-heading{font-size:clamp(24px,7vw,36px)}
+  .about-body p{font-size:14px}
+  .tag-cloud{gap:8px}
+  .tag{font-size:11px;padding:5px 12px}
+  /* section labels */
+  .sec-t{font-size:clamp(24px,7vw,36px)}
+  .sec-hd{margin-bottom:32px}
+  /* work bento */
+  #work{padding:0 16px 48px}
+  .work-label{margin-bottom:24px}
+  .bc{padding:20px}
+  .bc-title{font-size:16px}
+  .bc-sub{font-size:13px}
+  /* wins */
+  #wins{padding:56px 0}
+  .wins-header{padding:0 16px;margin-bottom:28px}
+  .wins-title{font-size:clamp(24px,7vw,36px)}
+  .wins-scroll{padding:8px 16px 16px;gap:12px}
+  .win-card{width:240px;padding:20px}
+  /* global */
+  #global{padding:48px 16px}
+  .global-title{font-size:clamp(24px,7vw,36px)}
+  .global-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .globe-c{padding:18px}
+  .gflag{font-size:28px}
+  .gloc{font-size:14px}
+  .gctx{font-size:12px}
+  /* edu */
+  #edu{padding:48px 16px;gap:28px}
+  .edu-left-label{font-size:clamp(24px,7vw,36px);margin-bottom:24px}
+  .edu-card{padding:20px}
+  .edu-deg{font-size:18px}
+  .cert-c{padding:12px 14px}
+  .cert-icon{width:30px;height:30px;font-size:14px}
+  /* contact */
+  #contact{padding:48px 16px}
+  .contact-h{font-size:clamp(28px,8vw,48px)}
+  .contact-p{font-size:14px}
+  .cl{padding:13px 14px}
+  /* collage on mobile — 3 cols, smaller */
+  .collage-wrap{gap:2px}
+  .col-item{width:72px;height:72px}
+  /* hero stat cards */
+  .hero-stat-card{padding:16px 18px}
+  .hsc-big{font-size:32px}
+  /* cursor off on touch */
+  #cur,#cur2{display:none}
+  /* mob menu */
+  .mob-nav{padding:20px 16px 24px}
 }
 </style>
 </head>
@@ -1180,6 +1275,8 @@ if(winsOuter&&winsScroll){
 (function(){
   const wrap = document.querySelector('.collage-wrap');
   if (!wrap) return;
+  // disable on touch devices
+  if ('ontouchstart' in window || window.innerWidth < 768) return;
 
   const items = Array.from(wrap.querySelectorAll('.col-item'));
   const MAX_SCALE  = 3.2;   // hovered item scale
@@ -1235,6 +1332,34 @@ if(winsOuter&&winsScroll){
 
   wrap.addEventListener('mouseleave', resetAll);
 })();
+
+// ── MOBILE COLLAGE TAP EXPAND ──
+if ('ontouchstart' in window || window.innerWidth < 768) {
+  document.querySelectorAll('.col-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const wasActive = this.classList.contains('mag-active');
+      document.querySelectorAll('.col-item').forEach(el => {
+        el.classList.remove('mag-active');
+        el.style.transform = '';
+        el.style.zIndex = '';
+      });
+      if (!wasActive) {
+        this.classList.add('mag-active');
+        this.style.transform = 'scale(2.8)';
+        this.style.zIndex = '20';
+      }
+    });
+  });
+  document.querySelector('.collage-wrap')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+      document.querySelectorAll('.col-item').forEach(el => {
+        el.classList.remove('mag-active');
+        el.style.transform = '';
+        el.style.zIndex = '';
+      });
+    }
+  });
+}
 </script>
 </body>
 </html>
